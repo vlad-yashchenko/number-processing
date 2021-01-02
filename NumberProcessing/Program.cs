@@ -1,4 +1,5 @@
-﻿namespace NumberProcessing
+﻿System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+namespace NumberProcessing
 {
 	using System;
 	using System.Collections.Generic;
@@ -10,12 +11,10 @@
         {
 			// 1. args
 			// 2. comment
-
-
 			Console.Write("How many numbers will there be? ");
 
-			int quantity;
-			while (!int.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)
+			double quantity;
+			while (!double.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)
 			{
 				Console.Write("Invalid input.How many numbers will there be? ");
 			}
@@ -25,16 +24,14 @@
 			for (var i = 0; i < quantity; i++)
 			{
 				Console.Write($"Insert the number #{i + 1}: ");
-				int parsed;
-				while (!int.TryParse(Console.ReadLine(), out parsed))
+				double parsed;
+				while (!double.TryParse(Console.ReadLine(), out parsed))
 				{
 					Console.Write("Invalid input. Insert the number #? ");
 				}
-				/*var input = Console.ReadLine();
-				int.TryParse(input, out var parsed);*/
-				container.Add(parsed);
+				container.Add((int)parsed);
 			}
-			int sum = 0;
+			double sum = 0;
 
 			 for (var i = 0; i < container.Count; i++)
 			{
@@ -45,7 +42,7 @@
 			Console.WriteLine($"Sum = {sum}");
 			/*Console.WriteLine("Sum = " + sum);*/
 
-			int composition = 1;
+			double composition = 1;
 
 			for (var i = 0; i < container.Count; i++)
 			{

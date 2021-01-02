@@ -26,10 +26,14 @@ namespace NumberProcessing
 			for (var i = 0; i < quantity; i++)
 			{
 				Console.Write($"Insert the number #{i + 1}: ");
-				var input = Console.ReadLine();
-				var parsed = int.Parse(input);
+				int parsed;
+				while (!int.TryParse(Console.ReadLine(), out parsed))
+				{
+					Console.Write("Invalid input. Insert the number #? ");
+				}
+				/*var input = Console.ReadLine();
+				int.TryParse(input, out var parsed);*/
 				container.Add(parsed);
-				/*container.Add(int.Parse(Console.ReadLine()));*/
 			}
 			int sum = 0;
 

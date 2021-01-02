@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace NumberProcessing
+﻿namespace NumberProcessing
 {
-     public class Program
+	using System;
+	using System.Collections.Generic;
+	using System.Globalization;
+
+	public class Program
      {
         public static void Main(string[] args)
         {
-	        // 1. TryParse
-			// 2. args
-			// 3. comment
+			// 1. args
+			// 2. comment
+
 
 			Console.Write("How many numbers will there be? ");
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq.Expressions;
 
 namespace NumberProcessing
 {
@@ -7,15 +9,14 @@ namespace NumberProcessing
      {
         public static void Main(string[] args)
         {
-			// 1. Check quantity >= 1
-			// 2. TryParse
-			// 3. args
-			// 4. comment
+	        // 1. TryParse
+			// 2. args
+			// 3. comment
 
 			Console.Write("How many numbers will there be? ");
 
 			int quantity;
-			while (!int.TryParse(Console.ReadLine(), out quantity))
+			while (!int.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)
 			{
 				Console.Write("Invalid input.How many numbers will there be? ");
 			}
@@ -32,7 +33,7 @@ namespace NumberProcessing
 			}
 			int sum = 0;
 
-			for (var i = 0; i < container.Count; i++)
+			 for (var i = 0; i < container.Count; i++)
 			{
 				sum = sum + container[i];
 				/*sum += container[i]*/

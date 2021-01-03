@@ -1,5 +1,4 @@
-﻿System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-namespace NumberProcessing
+﻿namespace NumberProcessing
 {
 	using System;
 	using System.Collections.Generic;
@@ -9,6 +8,7 @@ namespace NumberProcessing
      {
         public static void Main(string[] args)
         {
+			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 			// 1. args
 			// 2. comment
 			Console.Write("How many numbers will there be? ");

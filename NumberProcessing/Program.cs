@@ -2,15 +2,14 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Globalization;
-
 	public class Program
-     {
-        public static void Main(string[] args)
-        {
-			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+	{
+		public static void Main(string[] args)
+		{
 			// 1. args
 			// 2. comment
+			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("us-US");
+
 			Console.Write("How many numbers will there be? ");
 
 			double quantity;
@@ -19,7 +18,7 @@
 				Console.Write("Invalid input.How many numbers will there be? ");
 			}
 
-			var container = new List<int>();
+			var container = new List<double>();
 
 			for (var i = 0; i < quantity; i++)
 			{
@@ -29,11 +28,13 @@
 				{
 					Console.Write("Invalid input. Insert the number #? ");
 				}
-				container.Add((int)parsed);
+				/*var input = Console.ReadLine();
+				int.TryParse(input, out var parsed);*/
+				container.Add(parsed);
 			}
 			double sum = 0;
 
-			 for (var i = 0; i < container.Count; i++)
+			for (var i = 0; i < container.Count; i++)
 			{
 				sum = sum + container[i];
 				/*sum += container[i]*/
@@ -50,5 +51,5 @@
 			}
 			Console.WriteLine($"Composition = {composition}");
 		}
-     }
+	}
 }

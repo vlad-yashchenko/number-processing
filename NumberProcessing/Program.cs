@@ -10,7 +10,7 @@
 			// 2. comment
 			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("us-US");
 
-			Console.Write("How many numbers will there be? ");
+			Console.Write("How many numbers should be processed? ");
 
 			double quantity;
 			while (!double.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)

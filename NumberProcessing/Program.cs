@@ -8,7 +8,6 @@
 		{
 			// 1. args
 			// 2. comment
-			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("us-US");
 
 			Console.Write("How many numbers should be processed? ");
 
@@ -23,8 +22,10 @@
 			for (var i = 0; i < quantity; i++)
 			{
 				Console.Write($"Insert the number #{i + 1}: ");
+				string res = Console.ReadLine();
+				res = res.Replace('.', ',');
 				double parsed;
-				while (!double.TryParse(Console.ReadLine(), out parsed))
+				while (!double.TryParse(res, out parsed))
 				{
 					Console.Write("Invalid input. Insert the number #? ");
 				}

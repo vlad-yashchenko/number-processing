@@ -8,11 +8,10 @@
 		{
 			// 1. args
 			// 2. comment
-
 			Console.Write("How many numbers should be processed? ");
 
-			double quantity;
-			while (!double.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)
+			int quantity;
+			while (!int.TryParse(Console.ReadLine(), out quantity) || quantity <= 0)
 			{
 				Console.Write("Invalid input.How many numbers will there be? ");
 			}
@@ -29,8 +28,7 @@
 				{
 					Console.Write("Invalid input. Insert the number #? ");
 				}
-				/*var input = Console.ReadLine();
-				int.TryParse(input, out var parsed);*/
+
 				container.Add(parsed);
 			}
 			double sum = 0;
@@ -38,11 +36,9 @@
 			for (var i = 0; i < container.Count; i++)
 			{
 				sum = sum + container[i];
-				/*sum += container[i]*/
 			}
 			Console.WriteLine($"Average = {sum / container.Count }");
 			Console.WriteLine($"Sum = {sum}");
-			/*Console.WriteLine("Sum = " + sum);*/
 
 			double composition = 1;
 
